@@ -17,8 +17,8 @@ try:
         tfidf_cat = pickle.load(f)
     with open("models/tfidf_matrix_cat.pkl", "rb") as f:
         tfidf_matrix_cat = pickle.load(f)
-    # with open("user_item_matrix.pkl", "rb") as f:
-    #     user_item_matrix = pickle.load(f)
+    with open("models/user_item_matrix.pkl", "rb") as f:
+        user_item_matrix = pickle.load(f)
     with open("models/games.pkl", "rb") as f:
         games = pickle.load(f)
     with open("models/games_cat.pkl", "rb") as f:
