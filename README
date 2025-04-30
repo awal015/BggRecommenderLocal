@@ -19,10 +19,24 @@ Board Game Recommendation Engine
 
     The application requires the following Python libraries:
 
-    * Flask
-    * scikit-learn
-    * pandas
+    * blinker==1.9.0
+    * click==8.1.8
+    * colorama==0.4.6
+    * Flask==3.1.0
+    * itsdangerous==2.2.0
+    * Jinja2==3.1.6
+    * joblib==1.4.2
+    * MarkupSafe==3.0.2
+    * numpy
+    * pandas==2.2.3
+    * python-dateutil==2.9.0.post0
+    * pytz==2025.2
+    * scikit-learn==1.6.1
     * scipy
+    * six==1.17.0
+    * threadpoolctl==3.6.0
+    * tzdata==2025.2
+    * Werkzeug==3.1.3
 
     These dependencies are listed in the `requirements.txt` file.
 
@@ -41,7 +55,7 @@ Board Game Recommendation Engine
         ```
 
     4.4.  Ensure the data files are present:
-        The application relies on several pre-processed data files in pickle format.  These files should be in the same directory as the application code:
+        The application relies on several pre-processed data files in pickle format.  These files are not in the application code:
         * `tfidf.pkl`
         * `tfidf_matrix.pkl`
         * `tfidf_cat.pkl`
@@ -49,6 +63,8 @@ Board Game Recommendation Engine
         * `user_item_matrix.pkl`
         * `games.pkl`
         * `games_cat.pkl`
+
+        In order to retrieve these files, the engine "Adam Wallach USCD capstone.ipynb must be run with the data set: https://www.kaggle.com/datasets/threnjen/board-games-database-from-boardgamegeek/
 
     4.5. Run the application:
         ```bash
@@ -67,8 +83,6 @@ Board Game Recommendation Engine
     * `user_item_matrix.pkl`: User-item rating matrix.
     * `games.pkl`:  Game metadata (Name, BGGId, etc.).
     * `games_cat.pkl`: Game metadata including category.
-
-    These files are assumed to be in the same directory as the application.  They are generated from board game data.
 
 6.  Usage
 
@@ -120,8 +134,9 @@ Board Game Recommendation Engine
 
     1.  Start the application.
     2.  Open your web browser to http://localhost:5000.
-    3.  To get recommendations for a user, enter the user's name in the "User Name" field, select "user" and click "Get Recommendations".
+    3.  To get recommendations for a user, enter the user's name in the "BGG ID" field, select "user" and click "Get Recommendations".
     4.  To get recommendations for a game, enter the game's title in the "Game Title" field, select "game" and click "Get Recommendations".
+    5.  To get recommendations for a both, enter the user's name in the "BGG ID" field, then enter the game's title in the "Game Title" field, select "both" and click "Get Recommendations".
 
 10.  File Structure
 
